@@ -9,9 +9,9 @@ According to the official [documentation](https://kubernetes.github.io/ingress-n
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
 ```
-As the result, we had installed Nginx Ingress-controller
+As the result, we installed Nginx Ingress-controller
 ![controller](img/Controller.png)
-3. Creating and registering domain name on  https://dynv6.com/
+3. Creating and registering a domain name on  https://dynv6.com/
    ![domain](img/Domain.png)
 3.1 Configuring cert-manager (https://cert-manager.io/) with Letsencrypt
 
@@ -28,12 +28,12 @@ kubectl apply -f Letsencript.yaml
 4. Prepare Nginx deployment:
 Deployment
 Service
-Ingress (which will be connected to ClusterIssuer and use the letsencrypt certificate)
+Ingress (which will be connected to ClusterIssuer and use the Letsencrypt certificate)
 
-Preparing and Deploying [Deployment.yaml](Deployment.yaml) where we specifing Nginx server, Service for configurion ports and Ingress for configuring connection to clusterissuer that use letsencrypt certificate.
+Preparing and Deploying [Deployment.yaml](Deployment.yaml) where we specify Nginx server, Service for configuring ports and Ingress for configuring connection to clusterissuer that use letsencrypt certificate.
 ```
 kubectl apply -f Deployment.yaml
 ```
 
-As resoult we had host that are acceseble throug HTTPs
+As result, we had a [host](https://karpyn.v6.rocks) that is accessible through HTTPS
 ![host](img/HTTPs.png)
